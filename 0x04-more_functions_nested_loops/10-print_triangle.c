@@ -8,18 +8,24 @@ i#include "main.h"
 
 void print_triangle(int size)
 {
-	int i, j;
+	int x, y;
 
 	if (size > 0)
-		for (i = size; i > 0; i--)
+	{
+		for (x = 1; x <= size; x++)
 		{
-			for (j = 1; j <= size; j++)
-				if (j >= i)
-					_putchar('#');
-				else
+			for (y = 1; y <= size; y++)
+			{
+				if (y <= size - x)
+				{
 					_putchar(' ');
-			_putchar('\n');
+				}
+				else
+					_putchar('#');
+			}
 		}
+		_putchar('\n');
+	}
 	else
 		_putchar('\n');
 }
